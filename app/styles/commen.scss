@@ -22,6 +22,10 @@
     &:hover{
         background-color: rgba(0,0,0,0.3);
     }
+
+    @media (max-width: $screen-sm-max){
+        padding: 0;
+    }
 }
 
 .header-logo{
@@ -52,6 +56,7 @@
         display: none;
         float: none;
         width: 100%;
+        background-color: rgba(0,0,0,0.7);
 
         &.show{
             display: block;
@@ -59,6 +64,7 @@
     }
 
     a{
+        position: relative;
         float: left;
         display: block;
         width: 90px;
@@ -68,8 +74,22 @@
         line-height: 78px;
         text-align: center;
 
-        &.active{
-            border-bottom: 2px solid #3db55e;
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 45px;
+            width: 0;
+            height: 2px;
+            margin: 0 auto;
+            background-color: #3db55e;
+        }
+
+        &.active:before{
+            left: 0;
+            width: 90px;
+            transition: all 500ms;
         }
 
         &:hover{
