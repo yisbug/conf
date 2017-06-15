@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>app</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css" />
+  <link rel="stylesheet" href="/bower_components/fullpage.js/dist/jquery.fullpage.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+</head>
+
+<body>
+  <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <!-- header -->
+  <header class="header clearfix">
+    <a href="/" class="header-logo"></a>
+    <div class="header-menu" id="header-menu">
+      <span class="menu-line"></span>
+      <span class="menu-line"></span>
+      <span class="menu-line"></span>
+    </div>
+    <nav class="header-nav clearfix" id="header-nav">
+      <a href="#" class="active">首页</a>
+      <a href="#">日程</a>
+      <a href="#">赞助商</a>
+      <a href="#">地址</a>
+      <a href="#">视频回放</a>
+      <a href="#">关于我们</a>
+    </nav>
+  </header>
+
+  <!-- fullpage -->
+  <main id="fullpage">
+    <div class="section section-first">
+      <div class="first-container fade-in-up">
+        <h1 class="first-title">Conf 2017中国开发者大会</h1>
+        <p class="first-time">2017.09.03 - 09.04 @ 深圳</p>
+        <a href="#">
+          <div class="first-enter block-move">入场券</div>  
+        </a>
+      </div>
+    </div>
+
+    <div class="section section-second">
+      <div class="second-container clearfix fade-in-up">
+        <div class="volunteer second-block">
+          <div class="block-text">
+            <h2>
+              征集<strong>志愿者</strong>
+            </h2>
+            <p>BE VOLUNTEERS<i class="triangle"></i></p>
+          </div>
+          <a href="#"><div class="block-enter">现在申请</div></a>
+        </div>
+        <div class="sponsor second-block">
+          <div class="block-text">
+            <h2>
+              成为<strong>赞助商</strong>
+            </h2>
+            <p>BE SPONSOR<i class="triangle"></i></p>
+          </div>
+          <a href="#"><div class="block-enter">赞助详情</div></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section-thrid">
+      <div class="thrid-container fade-in-up">
+        <div class="thrid-text">
+          <h2>关于我们</h2>
+          <p>IM Web Conf 2017，是一场专注于web前端领域的开发者大会。</p>
+          <p>
+            历经5届的成功举办，第6届IM Web Conf将于2017年9月9日在深圳召开。届时，大会将邀请国内外的知名讲师，
+            为大家分享前端技术方方面面的经验。大会为前端开发者提供了交流与学习的机会，一起推动国内外前端技术的
+            发展，深入挖掘前端技术可以创造的价值。
+          </p>
+          <p>欢迎大家齐聚一堂，以技会友，共同分享爱那个技术的乐趣。</p>
+        </div>
+        <div class="thrid-img clearfix">
+          <div class="img-box">
+            <img src="/images/participant-photo.jpg">
+          </div>
+          <div class="img-box">
+            <img src="/images/participant-photo.jpg">
+          </div>
+          <div class="img-box">
+            <img src="/images/participant-photo.jpg">
+          </div>
+          <div class="img-box">
+            <img src="/images/participant-photo.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- follow -->
+  <div class="follow">
+    <div class="follow-list">
+      <p>FOLLOW</p>
+      <p>关注我们</p>
+      <ul>
+        <li class="follow-logo"><a href="#" class="qq-logo"></a></li>
+        <li class="follow-logo"><a href="#" class="txweib-logo"></a></li>
+        <li class="follow-logo"><a href="#" class="xlweib-logo"></a></li>
+      </ul>
+    </div>
+    <div class="follow-qr"></div>
+  </div>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+    (function (b, o, i, l, e, r) {
+      b.GoogleAnalyticsObject = l;
+      b[l] || (b[l] =
+        function () {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+      b[l].l = +new Date;
+      e = o.createElement(i);
+      r = o.getElementsByTagName(i)[0];
+      e.src = 'https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/fullpage.js/dist/jquery.fullpage.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>
