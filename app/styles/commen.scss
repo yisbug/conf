@@ -99,6 +99,9 @@
         @media (max-width: $screen-sm-max){
             float: none;
             width: 100%;
+            &.active:before{
+                width: 100%;
+            }
         }
     }
 }
