@@ -9,59 +9,70 @@ $height: 984px;
   top: $top / $height * 100%;
 }
 
+.section.active{
+    .fade-in-up{
+        animation: fadeInUp 1.5s;
+    }
+}
+
 .section{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+}
 
-    &.section-first{
-        position: relative;
-        background-image: url(/images/home-bg1.jpg);
-        color: #fff;
-        text-align: center;
+.section-first{
+    position: relative;
+    background-image: url(/images/home-bg1.jpg);
+    color: #fff;
+    text-align: center;
+
+    .first-container{
+        margin: 40px auto;
+    }
         
-        .first-title{
-            /*position: absolute;
-            left: 50%;
-            @include position-top(320px);
-            white-space: nowrap;
-            transform: translateX(-50%);*/
-            margin-bottom: 80px;
-            font-size: 94px;
-            font-weight: bold;
-        }
+    .first-title{
+        /*position: absolute;
+        left: 50%;
+        @include position-top(320px);
+        white-space: nowrap;
+        transform: translateX(-50%);*/
+        margin-bottom: 80px;
+        font-size: 94px;
+        font-weight: bold;
+    }
 
-        .first-time{
-            /*position: absolute;
-            left: 50%;
-            @include position-top(474px);
-            white-space: nowrap;
-            transform: translateX(-50%);*/
-            margin-bottom: 270px;
-            font-size: 40px;
-            font-weight: bold;
-        }
+    .first-time{
+        /*position: absolute;
+        left: 50%;
+        @include position-top(474px);
+        white-space: nowrap;
+        transform: translateX(-50%);*/
+        margin-bottom: 270px;
+        font-size: 40px;
+        font-weight: bold;
+    }
 
-        .first-enter{
-            /*position: absolute;
-            left: 50%;
-            @include position-top(788px);
-            transform: translateX(-50%);*/
-            display: inline-block;
-            width: 248px;
-            height: 69px;
-            background: url(/images/enter-block.png);
-            text-align: center;
-            font-size: 30px;
-            font-weight: bold;
-            line-height: 69px;
-            color: #fff;
-            letter-spacing: 0.2em;
+    .first-enter{
+        /*position: absolute;
+        left: 50%;
+        @include position-top(788px);
+        transform: translateX(-50%);*/
+        display: inline-block;
+        width: 248px;
+        height: 69px;
+        background: url(/images/enter-block.png);
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 69px;
+        color: #fff;
+        letter-spacing: 0.2em;
 
-            &:hover{
-                opacity: .8;
-            }
+        &:hover{
+            opacity: .8;
         }
+    }
 
         /*.first-enter:before{
             position: absolute;
@@ -84,23 +95,32 @@ $height: 984px;
             border-bottom: 29px solid transparent;
             border-left: 20px solid #3db55e;
         }*/
-    }
 }
 
 .section-second{
     position: relative;
     background-image: url(/images/home-bg2.jpg);
+
+
+    .second-container{
+        width: 1256px;
+        max-width: 100%;
+        margin: 40px auto;
+        overflow: hidden;
+    }
 }
 
 .second-block{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     width: 262px;
     height: 516px;
+    margin-bottom: 20px;
+
+    &:last-child{
+        margin-bottom: 0;
+    }
 
     &.volunteer{
-        left: 20%;
+        float: left;
         padding: 112px 10px 0 180px;
         background: url(/images/volunteer-bg.png) no-repeat;
 
@@ -118,7 +138,7 @@ $height: 984px;
     }
 
     &.sponsor{
-        left: 60%;
+        float: right;
         padding: 112px 180px 0 10px;
         background: url(/images/sponsor-bg.png) no-repeat;
 
@@ -189,10 +209,10 @@ $height: 984px;
     position: relative;
     background-image: url(/images/home-bg3.jpg);
 
-    .container{
+    .thrid-container{
         width: 100%;
         max-width: 1306px;
-        margin: 0 auto;
+        margin: 40px auto;
     }
 
     .thrid-text{
@@ -282,5 +302,27 @@ $height: 984px;
 
     .follow-qr{
         @include sprite($qr);
+
+        &:hover{
+            position: relative;
+            z-index: 100;
+            transform: scale(1.2);
+        }
+    }
+}
+
+#fp-nav ul li a span{
+    background-color: #fff;
+}
+
+@keyframes fadeInUp{
+    from{
+        opacity: 0;
+        transform: translate3d(0,150px,0);
+    }
+
+    to{
+        opacity: 1;
+        transform: none;
     }
 }
