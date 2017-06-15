@@ -1,0 +1,257 @@
+@import './reset.scss';
+@import './commen.scss';
+
+$height: 984px;
+
+//计算距离顶部的百分比
+@mixin position-top($top) {
+  top: $top / $height * 100%;
+}
+
+.section{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    &.section-first{
+        position: relative;
+        background-image: url(/images/home-bg1.jpg);
+        color: #fff;
+        
+        .first-title{
+            position: absolute;
+            left: 50%;
+            @include position-top(320px);
+            white-space: nowrap;
+            transform: translateX(-50%);
+            font-size: 94px;
+        }
+
+        .first-time{
+            position: absolute;
+            left: 50%;
+            @include position-top(474px);
+            white-space: nowrap;
+            transform: translateX(-50%);
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .first-enter{
+            position: absolute;
+            left: 50%;
+            @include position-top(788px);
+            transform: translateX(-50%);
+            width: 200px;
+            height: 58px;
+            background-color: #3db55e;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 58px;
+            color: #fff;
+            letter-spacing: 0.2em;
+        }
+
+        .first-enter:before{
+            position: absolute;
+            left: -20px;
+            content: '';
+            height:0;
+            width: 0;
+            border-top: 29px solid transparent;
+            border-bottom: 29px solid transparent;
+            border-right: 20px solid #3db55e;
+        }
+
+        .first-enter:after{
+            position: absolute;
+            right: -20px;
+            content: '';
+            height: 0;
+            width: 0;
+            border-top: 29px solid transparent;
+            border-bottom: 29px solid transparent;
+            border-left: 20px solid #3db55e;
+        }
+    }
+}
+
+.section-second{
+    position: relative;
+    background-image: url(/images/home-bg2.jpg);
+}
+
+.second-block{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 262px;
+    height: 516px;
+
+    &.volunteer{
+        left: 20%;
+        padding: 112px 10px 0 180px;
+        background: url(/images/volunteer-bg.png) no-repeat;
+
+        .block-text strong{
+            color: #3db55e;
+        }
+
+        .triangle{
+            background: url(/images/green-arrow.png) no-repeat;
+        }
+
+        .block-enter{
+            background: url(/images/volunteer-enter.png) no-repeat;
+        }
+    }
+
+    &.sponsor{
+        left: 60%;
+        padding: 112px 180px 0 10px;
+        background: url(/images/sponsor-bg.png) no-repeat;
+
+        .block-text strong{
+            color: #dd812f;
+        }
+
+        .block-text p{
+            padding-left: 84px;
+        }
+
+        .block-enter{
+            margin-left: 68px;
+            background: url(/images/sponsor-enter.png) no-repeat;
+        }
+
+        .triangle{
+            background: url(/images/orange-arrow.png) no-repeat;
+        }
+    }
+
+    .block-text{
+        h2{
+            padding-bottom: 18px;
+            color: #fff;
+            font-size: 50px;
+            font-weight: bold;
+            border-bottom: 3px solid #fff;
+        }
+
+        strong{
+            margin-left: 12px;
+            color: #3db55e;
+        }
+
+        p{
+            font-size: 24px;
+            padding: 14px 0;
+            color: #fff;
+            border-bottom: 1px solid #fff;
+        }
+
+        .triangle{
+            display: inline-block;
+            width: 13px;
+            height: 19px;
+            margin-left: 12px;
+        }
+    }
+
+    .block-enter{
+        width: 174px;
+        height: 67px;
+        margin-top: 32px;
+        padding-left: 26px;
+        color: #fff;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 67px;
+    }
+}
+
+.section-thrid{
+    position: relative;
+    background-image: url(/images/home-bg3.jpg);
+
+    .container{
+        width: 100%;
+        max-width: 1260px;
+        margin: 0 auto;
+    }
+
+    .thrid-text{
+        color: #fff;
+
+        h2{
+            margin-bottom: 32px;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        p{
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+
+    .thrid-img{
+        margin-top: 60px;
+    }
+
+    .img-box{
+        float: left;
+        width: 25%;
+        padding-right: 46px;
+        box-sizing: border-box;
+
+        img{
+            width: 100%;
+            height: 100%;
+            border: 5px solid #fff;
+        }
+    }
+}
+
+.follow{
+    position: fixed;
+    right: 16px;
+    bottom: 46px;
+
+    .follow-list{
+        padding-left: 38px;
+        margin-bottom: 40px;
+    }
+
+    p{
+        margin: 0;
+        font-size: 12px;
+        color: #fff;
+    }
+
+    .follow-logo{
+        margin: 18px 0;
+        padding-left: 16px;
+
+        a{
+            display: block;
+        }
+
+        .qq-logo{
+            @include sprite($qq-logo);
+        }
+
+        .txweib-logo{
+            @include sprite($xlweib-logo);
+        }
+
+        .xlweib-logo{
+            @include sprite($txweib-logo);
+        }
+    }
+
+    .follow-qr{
+        @include sprite($qr);
+    }
+}

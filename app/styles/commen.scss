@@ -1,0 +1,66 @@
+@import './sprite.scss';
+
+.clearfix{
+    &:before,
+    &:after{
+        content: ' ';
+        display: table;
+    }
+
+    &:after{
+        clear: both;
+    }
+}
+
+.header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0 28px;
+    z-index: 1000;
+    transition: all .4s ease;
+
+    &:hover{
+        background-color: rgba(0,0,0,0.3);
+    }
+
+    .header-logo{
+        float: left;
+        margin-top: 10px;
+        @include sprite($logo);
+
+        img{
+            width: 138px;
+            height: 60px;
+        }
+    }
+
+    .header-nav{
+        float: left;
+        margin-left: 184px;
+
+        @media (max-width: 800px){
+            margin-left: 0;
+        }
+
+        a{
+            float: left;
+            display: block;
+            width: 90px;
+            height: 78px;
+            border-bottom: 2px solid transparent;
+            color: #fff;
+            line-height: 78px;
+            text-align: center;
+
+            &.active{
+                border-bottom: 2px solid #3db55e;
+            }
+
+            &:hover{
+                color: #3db55e;
+            }
+        }
+    }
+}
