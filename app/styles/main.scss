@@ -1,13 +1,8 @@
 @import './variables.scss';
 @import './reset.scss';
+@import './sprite.scss';
 @import './commen.scss';
 
-$height: 984px;
-
-//计算距离顶部的百分比
-@mixin position-top($top) {
-  top: $top / $height * 100%;
-}
 
 .section.active{
     .fade-in-up{
@@ -32,36 +27,29 @@ $height: 984px;
     }
         
     .first-title{
-        /*position: absolute;
-        left: 50%;
-        @include position-top(320px);
-        white-space: nowrap;
-        transform: translateX(-50%);*/
         margin-bottom: 80px;
         font-size: 94px;
         font-weight: bold;
+
+        @media (max-width: $screen-sm-max){
+            font-size: 50px;
+        }
     }
 
     .first-time{
-        /*position: absolute;
-        left: 50%;
-        @include position-top(474px);
-        white-space: nowrap;
-        transform: translateX(-50%);*/
         margin-bottom: 270px;
         font-size: 40px;
         font-weight: bold;
+
+         @media (max-width: $screen-sm-max){
+            font-size: 20px;
+        }
     }
 
-    .first-enter{
-        /*position: absolute;
-        left: 50%;
-        @include position-top(788px);
-        transform: translateX(-50%);*/
+    .first-block{
         display: inline-block;
         width: 248px;
         height: 69px;
-        background: url(/images/enter-block.png);
         text-align: center;
         font-size: 30px;
         font-weight: bold;
@@ -74,33 +62,22 @@ $height: 984px;
         }
     }
 
-        /*.first-enter:before{
-            position: absolute;
-            left: -20px;
-            content: '';
-            height:0;
-            width: 0;
-            border-top: 29px solid transparent;
-            border-bottom: 29px solid transparent;
-            border-right: 20px solid #3db55e;
-        }
+    .first-enter{
+        @extend .first-block;
+        @include sprite($enter-block);
+        display: none;
+    }
 
-        .first-enter:after{
-            position: absolute;
-            right: -20px;
-            content: '';
-            height: 0;
-            width: 0;
-            border-top: 29px solid transparent;
-            border-bottom: 29px solid transparent;
-            border-left: 20px solid #3db55e;
-        }*/
+    .first-sellout{
+        @extend .first-block;
+        @include sprite($sellout-block);
+        display: none;
+    }
 }
 
 .section-second{
     position: relative;
     background-image: url(/images/home-bg2.jpg);
-
 
     .second-container{
         width: 1256px;
@@ -111,9 +88,10 @@ $height: 984px;
 }
 
 .second-block{
-    width: 262px;
-    height: 516px;
+    width: 452px;
+    height: 628px;
     margin-bottom: 20px;
+    box-sizing: border-box;
 
     &:last-child{
         margin-bottom: 0;
@@ -122,25 +100,44 @@ $height: 984px;
     &.volunteer{
         float: left;
         padding: 112px 10px 0 180px;
-        background: url(/images/volunteer-bg.png) no-repeat;
+        background-image: url(/images/volunteer-bg.png);
+        background-position: center center;
+        background-size: cover;
+
+        @media (max-width: $screen-sm-max){
+            display: block;
+            width: 100%;
+            padding: 112px 0 0 0;
+            text-align: center;
+        }
 
         .block-text strong{
             color: #3db55e;
         }
 
         .triangle{
-            background: url(/images/green-arrow.png) no-repeat;
+            @include sprite($green-arrow);
         }
 
         .block-enter{
-            background: url(/images/volunteer-enter.png) no-repeat;
+            @include sprite($volunteer-enter);
+            width: 174px;
         }
     }
 
     &.sponsor{
         float: right;
         padding: 112px 180px 0 10px;
-        background: url(/images/sponsor-bg.png) no-repeat;
+        background-image: url(/images/sponsor-bg.png);
+        background-position: center center;
+        background-size: cover;
+
+        @media (max-width: $screen-sm-max){
+            display: block;
+            width: 100%;
+            padding: 112px 0 0 0;
+            text-align: center;
+        }
 
         .block-text strong{
             color: #dd812f;
@@ -152,15 +149,20 @@ $height: 984px;
 
         .block-enter{
             margin-left: 68px;
-            background: url(/images/sponsor-enter.png) no-repeat;
+            @include sprite($sponsor-enter);
+            width: 174px;
         }
 
         .triangle{
-            background: url(/images/orange-arrow.png) no-repeat;
+            @include sprite($orange-arrow);
         }
     }
 
     .block-text{
+        @media (max-width: $screen-sm-max){
+            display: inline-block;
+        }
+
         h2{
             padding-bottom: 18px;
             color: #fff;
@@ -201,6 +203,11 @@ $height: 984px;
 
         &:hover{
             opacity: .8;
+        }
+
+        @media (max-width: $screen-sm-max){
+            display: inline-block;
+            text-align: left;
         }
     }
 }

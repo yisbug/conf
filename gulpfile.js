@@ -12,7 +12,7 @@ const reload = browserSync.reload;
 let dev = true;
 
 gulp.task('styles', () => {
-  return gulp.src('app/styles/*.scss')
+  return gulp.src('app/styles/main.scss')
     .pipe($.plumber())
     .pipe($.if(dev, $.sourcemaps.init()))
     .pipe($.sass.sync({
@@ -72,7 +72,7 @@ gulp.task('html', ['styles', 'scripts'], () => {
 });
 
 gulp.task('images', () => {
-  return gulp.src('app/images/**/*')
+  return gulp.src(['app/images/**/*','!app/images/sprite/*'])
     .pipe($.cache($.imagemin()))
     .pipe(gulp.dest('dist/images'));
 });
@@ -166,7 +166,7 @@ gulp.task('wiredep', () => {
 });
 
 gulp.task('sprite',()=>{
-  return gulp.src('app/images/*.png')
+  return gulp.src('app/images/sprite/*.png')
     .pipe($.spritesmith({
       imgName: 'images/sprite.png',
       cssName: 'styles/sprite.scss',
