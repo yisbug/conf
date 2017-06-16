@@ -42,7 +42,7 @@
         font-weight: bold;
 
          @media (max-width: $screen-sm-max){
-            font-size: 20px;
+            font-size: 28px;
         }
     }
 
@@ -83,7 +83,9 @@
         width: 1256px;
         max-width: 100%;
         margin: 40px auto;
+        padding: 0 20px;
         overflow: hidden;
+        box-sizing: border-box;
     }
 }
 
@@ -144,17 +146,19 @@
         }
 
         .block-text p{
-            padding-left: 84px;
+            padding-left: 70px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .triangle{
+            @include sprite($orange-arrow);
         }
 
         .block-enter{
             margin-left: 68px;
             @include sprite($sponsor-enter);
             width: 174px;
-        }
-
-        .triangle{
-            @include sprite($orange-arrow);
         }
     }
 
@@ -235,6 +239,7 @@
         p{
             font-size: 20px;
             line-height: 30px;
+            text-indent: 2em;
         }
     }
 
@@ -245,6 +250,7 @@
     .img-box{
         float: left;
         width: 25%;
+        height: 166px;
         margin-bottom: 32px;
         padding: 0 46px;
         box-sizing: border-box;
@@ -255,6 +261,7 @@
 
         @media (max-width: 768px){
             width: 100%;
+            height: auto;
         }
 
         img{
@@ -299,11 +306,11 @@
         }
 
         .txweib-logo{
-            @include sprite($xlweib-logo);
+            @include sprite($txweib-logo);
         }
 
         .xlweib-logo{
-            @include sprite($txweib-logo);
+            @include sprite($xlweib-logo);
         }
     }
 

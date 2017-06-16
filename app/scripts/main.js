@@ -7,7 +7,10 @@ $(document).ready(function(){
         navigation: true,
         navigationPosition: 'right',
         loopBottom: true,
-        responsiveWidth: 768
+        responsiveWidth: 768,
+        afterLoad: function(anchorLink,index){
+            activeLink($('#header-nav').children().eq(index-1));
+        }
     });
 
     //小屏幕下显示隐藏菜单
@@ -17,7 +20,12 @@ $(document).ready(function(){
 
     //点击导航显示选中效果
     $('#header-nav').delegate('a','click',function(){
-        $(this).siblings('a').removeClass('active');
-        $(this).addClass('active');
+        activeLink($(this));
     });
+
+    //激活导航栏链接
+    function activeLink(ele){
+        ele.siblings('a').removeClass('active');
+        ele.addClass('active');
+    }
 });
