@@ -176,6 +176,15 @@ gulp.task('sprite',()=>{
     .pipe(gulp.dest('app/'))
 });
 
+gulp.task('inline',()=>{
+  return gulp.src('dist/index.html')
+    .pipe($.inline({
+      base: 'dist/',
+      disabledTypes: ['svg', 'img', 'js'],
+    }))
+    .pipe(gulp.dest('dist/'));
+});
+
 gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
@@ -183,6 +192,6 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', () => {
   return new Promise(resolve => {
     dev = false;
-    runSequence(['clean', 'wiredep'], 'build', resolve);
+    runSequence(['clean', 'wiredep'], 'build', 'inline', resolve);
   });
 });

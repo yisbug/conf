@@ -6,7 +6,9 @@
 
 .section.active{
     .fade-in-up{
-        animation: fadeInUp 1.5s;
+        @media (min-width: $screen-sm-max){
+            animation: fadeInUp 1.5s;
+        }
     }
 }
 
