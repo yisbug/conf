@@ -1,6 +1,7 @@
 @import './variables.scss';
 @import './reset.scss';
 @import './sprite.scss';
+//@import './loading.scss';
 @import './commen.scss';
 
 
@@ -8,6 +9,18 @@
     .fade-in-up{
         @media (min-width: $screen-sm-max){
             animation: fadeInUp 1.5s;
+        }
+    }
+
+    .fade-in-left{
+        @media (min-width: $screen-sm-max){
+            animation: fadeInLeft 1.5s;
+        }
+    }
+
+    .fade-in-right{
+        @media (min-width: $screen-sm-max){
+            animation: fadeInRight 1.5s;
         }
     }
 }
@@ -341,6 +354,30 @@
     from{
         opacity: 0;
         transform: translate3d(0,150px,0);
+    }
+
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeInLeft{
+    from{
+        opacity: 0;
+        transform: translate3d(-150px,0,0);
+    }
+
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeInRight{
+    from{
+        opacity: 0;
+        transform: translate3d(150px,0,0);
     }
 
     to{

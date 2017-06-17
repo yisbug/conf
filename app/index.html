@@ -27,8 +27,12 @@
 
 <body>
   <!--[if IE]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <p class="browserupgrade">您正在使用<strong>过时的</strong>浏览器. 请<a href="http://browsehappy.com/">升级您的浏览器</a>来提升您的用户体验。</p>
     <![endif]-->
+
+  <!-- <div class="loading">
+    <canvas class="loading-canvas" id="loading-canvas"></canvas>
+  </div> -->
 
   <!-- header -->
   <header class="header clearfix">
@@ -62,8 +66,8 @@
     </div>
 
     <div class="section section-second">
-      <div class="second-container clearfix fade-in-up">
-        <div class="volunteer second-block">
+      <div class="second-container clearfix" id="scene">
+        <div class="volunteer second-block fade-in-left">
           <div class="block-text">
             <h2>
               征集<strong>讲师</strong>
@@ -72,7 +76,7 @@
           </div>
           <a href="https://wj.qq.com/s/1424890/8a62" target="_blank"><div class="block-enter">现在申请</div></a>
         </div>
-        <div class="sponsor second-block">
+        <div class="sponsor second-block fade-in-right">
           <div class="block-text">
             <h2>
               成为<strong>赞助商</strong>
@@ -91,11 +95,12 @@
           <p>
             会议发起方来自腾讯公司，组织者是腾讯公司最专业的前端团队之一，IMWeb团队。
           <p>
-            IMWeb团队专注前端领域多年，负责过QQ资料、QQ注册、QQ群等亿级业务，目前聚焦于在线教育领域，精心打磨腾讯课堂及企鹅辅导两大产品，
-            并且制作了一系列的专业课程用来帮助前端初学者快速成长。
+            IMWeb团队专注前端领域多年，曾负责腾讯最核心的基础海量业务QQ统一登录、QQ注册、QQ群等，目前主要聚焦腾讯在线教育战略产品腾讯课堂及企鹅辅导的研发，
+            并精心打造前端工程师Next学位，开启在线教育变革之路。
           </p>
           <p>
-            我们的工程师们也多次在Qconf、Velocity等业界大会进行分享。我们有着丰富的前端经验，也热衷于技术的开源与分享。每年，我们都会举办自己的前端大会——IMWeb Conf。
+            我们的工程师们也多次在Qconf、Velocity等业界大会进行分享。我们有着丰富的前端经验，也热衷于技术的开源与分享。每年，我们都会举办自己的前端大会
+            ——IMWeb Conf。
           </p>
         </div>
         <div class="thrid-img clearfix">
@@ -138,11 +143,13 @@
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <script src="/bower_components/fullpage.js/dist/jquery.fullpage.js"></script>
+  <script src="/bower_components/parallax/deploy/parallax.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
   <!-- build:js scripts/main.js -->
   <script src="scripts/main.js"></script>
+  <!-- <script src="scripts/loading.js"></script> -->
   <!-- endbuild -->
 
   <script type="text/javascript" src="//tajs.qq.com/stats?sId=49998595" charset="UTF-8"></script>

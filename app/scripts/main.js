@@ -23,6 +23,9 @@ $(document).ready(function(){
         activeLink($(this));
     });
 
+    var scene=$('#scene').get(0);
+    var parallax=new Parallax(scene);
+
     //激活导航栏链接
     function activeLink(ele){
         ele.siblings('a').removeClass('active');
