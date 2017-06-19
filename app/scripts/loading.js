@@ -1,4 +1,7 @@
-/* super inefficient right now, could be improved */
+'use strict';
+
+$(document).ready(function(){
+
 var c = document.getElementById('loading-canvas'),
     ctx = c.getContext('2d'),
     cw = c.width = 400,
@@ -153,4 +156,15 @@ gradient2.addColorStop(.1, 'hsla('+circle.hue+', 100%, 100%, .7)');
 gradient2.addColorStop(1, 'hsla('+circle.hue+', 100%, 50%, 0)');
 
 /* Loop It, Loop It Good */
-setInterval(loop, 16);
+var interval=setInterval(loop, 16);
+
+var homeBackground=new Image();
+homeBackground.onload=function(){
+  $('#homeBackground').css('background-image','url(/images/home-bg1.jpg)');
+  $('#loading').addClass('hide');
+  clearInterval(interval);
+}
+homeBackground.src='/images/home-bg1.jpg';
+
+
+});

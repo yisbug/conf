@@ -5,6 +5,10 @@ const browserSync = require('browser-sync').create();
 const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
+const rev=require('gulp-rev');
+const revCollector=require('gulp-rev-collector');
+const qiniu=require('gulp-qiniu');
+const prefix=require('gulp-prefix');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -71,10 +75,32 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe(gulp.dest('dist'));
 });
 
+const qiniuOption={
+  accessKey: '1VQoqeNeV4kDaOHO7ajqYZNm-2lgQ093BUBQKC1U',
+  secretKey: 'Q1xh9qaj25Y6jzLt8-4vp5lzbkC9-uAtIOPw02Xj',
+  bucket: 'imweb',
+  origin: 'http://7tszky.com1.z0.glb.clouddn.com'
+};
+
 gulp.task('images', () => {
   return gulp.src(['app/images/**/*','!app/images/sprite/*'])
     .pipe($.cache($.imagemin()))
-    .pipe(gulp.dest('dist/images'));
+    .pipe(rev())
+    .pipe(qiniu(qiniuOption,{
+      dir: 'images/',
+      versioning: false,
+      versionFile: './cdn.json',
+      concurrent: 10
+    }))
+    .pipe(gulp.dest('dist/images'))
+    .pipe(rev.manifest())
+    .pipe(gulp.dest('rev'));
+});
+
+gulp.task('rev',()=>{
+  return gulp.src(['rev/*json','dist/index.html'])
+    .pipe(revCollector())
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('fonts', () => {
@@ -165,6 +191,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
+//生成雪碧图
 gulp.task('sprite',()=>{
   return gulp.src('app/images/sprite/*.png')
     .pipe($.spritesmith({
@@ -176,6 +203,7 @@ gulp.task('sprite',()=>{
     .pipe(gulp.dest('app/'))
 });
 
+//内联css
 gulp.task('inline',()=>{
   return gulp.src('dist/index.html')
     .pipe($.inline({
@@ -185,6 +213,23 @@ gulp.task('inline',()=>{
     .pipe(gulp.dest('dist/'));
 });
 
+//为图片添加cdn前缀
+gulp.task('preimg',()=>{
+  return gulp.src('dist/index.html')
+    .pipe(prefix(qiniuOption.origin,[
+      { match: 'img[src]', attr: 'src' }
+    ]))
+    .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('revjs',()=>{
+  return gulp.src('dist/scripts/*.js')
+    .pipe(rev())
+    .pipe(gulp.dest('dist/scripts'))
+    .pipe(rev.manifest())
+    .pipe(gulp.dest('rev'));
+});
+
 gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
@@ -192,6 +237,6 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', () => {
   return new Promise(resolve => {
     dev = false;
-    runSequence(['clean', 'wiredep'], 'build', 'inline', resolve);
+    runSequence(['clean', 'wiredep'], 'build', 'inline', 'rev', 'revjs', 'rev', 'preimg', resolve);
   });
 });
