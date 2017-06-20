@@ -17,7 +17,7 @@
       }
 
       &-text {
-        font-size: 1rem;
+        font-size: 14px;
         line-height: 180%;
         color: #fff;
         padding: 0;
@@ -54,6 +54,8 @@
         position: absolute;
         top: 30px;
         right: 30px;
+        background: none;
+        color:#4de577;
       }
     }
   }
