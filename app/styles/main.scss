@@ -134,12 +134,12 @@
         background-position: center center;
         background-size: cover;
 
-        @media (max-width: $screen-sm-max){
-            display: block;
-            width: 100%;
-            padding: 112px 0 0 0;
-            text-align: center;
-        }
+        // @media (max-width: $screen-sm-max){
+        //     display: block;
+        //     width: 100%;
+        //     padding: 112px 0 0 0;
+        //     text-align: center;
+        // }
 
         .block-text strong{
             color: #dd812f;
@@ -163,9 +163,9 @@
     }
 
     .block-text{
-        @media (max-width: $screen-sm-max){
-            display: inline-block;
-        }
+        // @media (max-width: $screen-sm-max){
+        //     display: inline-block;
+        // }
 
         h2{
             padding-bottom: 18px;
