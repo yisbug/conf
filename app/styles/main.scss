@@ -43,17 +43,17 @@
 
     .first-title{
         margin-bottom: 80px;
-        font-size: 94px;
+        font-size: 96px;
         font-weight: bold;
 
         @media (max-width: $screen-sm-max){
-            font-size: 50px;
+            font-size: 48px;
         }
     }
 
     .first-time{
         margin-bottom: 270px;
-        font-size: 40px;
+        font-size: 36px;
         font-weight: bold;
 
          @media (max-width: $screen-sm-max){
@@ -114,7 +114,7 @@
         // }
 
         .block-text strong{
-            color: #3db55e;
+            color: #4de577;
         }
 
         .triangle{
@@ -170,14 +170,14 @@
         h2{
             padding-bottom: 18px;
             color: #fff;
-            font-size: 50px;
+            font-size: 48px;
             font-weight: bold;
             border-bottom: 3px solid #fff;
         }
 
         strong{
             margin-left: 12px;
-            color: #3db55e;
+            color: #4de577;
         }
 
         p{
@@ -201,7 +201,7 @@
         margin-top: 32px;
         padding-left: 26px;
         color: #fff;
-        font-size: 30px;
+        font-size: 28px;
         font-weight: bold;
         line-height: 67px;
 
@@ -238,7 +238,7 @@
 
         p{
             font-size: 18px;
-            line-height: 32px;
+            line-height: 36px;
             text-indent: 2em;
         }
     }
@@ -295,11 +295,14 @@
         max-width: 742px;
         padding: 20px;
         color: #fff;
-        font-size: 20px;
-        line-height: 50px;
+        font-size: 18px;
+        line-height: 36px;
 
         p{
             margin-bottom: 50px;
+        }
+        a{
+            color:#4de577;
         }
     }
 }
@@ -322,11 +325,14 @@
         max-width: 742px;
         padding: 20px;
         color: #fff;
-        font-size: 20px;
-        line-height: 50px;
+        font-size: 18px;
+        line-height: 36px;
 
         p{
             margin-bottom: 50px;
+            a{
+                color:#4de577;
+            }
         }
     }
 }
@@ -597,7 +603,7 @@
 
     .pop-lecture{
         margin-bottom: 18px;
-        color: #3ea15b;
+        color: #4de577;
         font-size: 16px;
     }
 
