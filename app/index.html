@@ -30,12 +30,15 @@
       <p class="browserupgrade">您正在使用<strong>过时的</strong>浏览器. 请<a href="http://browsehappy.com/">升级您的浏览器</a>来提升您的用户体验。</p>
     <![endif]-->
 
-  <!-- <div class="loading" id="loading">
-    <div class="loading-container">
-      <canvas class="loading-canvas" id="loading-canvas"></canvas>
-      <p class="loading-title">&lt;IMWeb Conf 2017/&gt;</p>
+  <div class="loading-wrap wrap--fullpage" id="loading">
+    <div class="loading-center">
+      <i class="earth-loading"></i>
+      <div>
+        <img src="./images/loading-text.png">
+      </div>
     </div>
-  </div> -->
+  </div>
+
 
   <!-- header -->
   <header class="header clearfix">
@@ -47,7 +50,7 @@
     </div>
     <nav class="header-nav clearfix" id="header-nav">
       <a href="#home" class="active">首页</a>
-      <a href="#schedule">日程</a>
+      <!-- <a href="#schedule">日程</a> -->
       <a href="#lectuer">讲师</a>
       <a href="#sponsor">赞助商</a>
       <a href="#information">资讯</a>
@@ -57,7 +60,7 @@
 
   <!-- fullpage -->
   <main id="fullpage">
-    <div class="section section-first" id="homeBackground">
+    <div class="section section-first" id="homeBackground" data-url="/images/home-bg1.jpg">
       <div class="first-container fade-in-up">
         <h1 class="first-title">IMWeb Conf 2017</h1>
         <p class="first-time">2017.09.16 @ 深圳科兴国际会议中心</p>
@@ -68,11 +71,11 @@
       </div>
     </div>
 
-    <div class="section section-schedule">
-      <div class="schedule-container">
+    <!--<div class="section section-schedule">
+      <div class="schedule-container"> -->
 
         <!-- 日程 -->
-        <i class="clock-icon"></i>
+        <!-- <i class="clock-icon"></i>
         <ul class="schedule-list list-conainer">
           <li class="list-text">
             <p class="time list-left">8:15</p>
@@ -130,10 +133,10 @@
             </div>
             <p class="time list-right">10:45</p>
           </li>
-        </ul>
+        </ul> -->
 
         <!--  分会场 -->
-        <div>
+        <!-- <div>
           <ul class="place-list" id="place-list">
             <li class="active" data-target="place1">分会场1</li>
             <li data-target="place2">分会场2</li>
@@ -411,7 +414,7 @@
           <p class="end-word">End</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- <div class="section section-second">
       <div class="second-container clearfix">
@@ -436,7 +439,7 @@
       </div>
     </div> -->
 
-    <div class="section section-lectuer">
+    <div class="section section-lectuer" data-url="/images/home-bg2.jpg">
       <div class="lectuer-container clearfix">
         <div class="lectuer second-block fade-in-left">
           <div class="block-text">
@@ -463,7 +466,7 @@
       </div>
     </div>
 
-    <div class="section section-sponsor">
+    <div class="section section-sponsor" data-url="/images/home-bg2.jpg">
       <div class="sponsor-container clearfix">
         <div class="sponsor second-block fade-in-right">
           <div class="block-text">
@@ -472,8 +475,8 @@
             </h2>
             <p>BE SPONSOR<i class="triangle"></i></p>
           </div>
-          <a href="mailto:vienwu@tencent.com">
-            <div class="block-enter">现在加入</div>
+          <a href="/images/赞助方案.pdf" target="_blank">
+            <div class="block-enter">赞助详情</div>
           </a>
         </div>
         <div class="sponsor-text">
@@ -487,7 +490,7 @@
       </div>
     </div>
 
-    <div class="section section-information">
+    <div class="section section-information" data-url="./images/information-bg.jpg">
       <div class="information-container">
         <ul class="information-list fade-in-up">
           <li>
@@ -503,9 +506,6 @@
                   <div class="share">
                     <i class="share-icon"></i>分享
                   </div>
-                  <div class="thumb">
-                    <i class="thumb-icon"></i>(100)
-                  </div>
                 </div>
               </div>
             </div>
@@ -523,9 +523,6 @@
                   <div class="share">
                     <i class="share-icon"></i>分享
                   </div>
-                  <div class="thumb">
-                    <i class="thumb-icon"></i>(100)
-                  </div>
                 </div>
               </div>
             </div>
@@ -542,9 +539,6 @@
                 <div class="caption-right">
                   <div class="share">
                     <i class="share-icon"></i>分享
-                  </div>
-                  <div class="thumb">
-                    <i class="thumb-icon"></i>(100)
                   </div>
                 </div>
               </div>
@@ -554,7 +548,7 @@
       </div>
     </div>
 
-    <div class="section section-thrid">
+    <div class="section section-thrid" data-url="/images/home-bg3.jpg">
       <div class="thrid-container fade-in-up">
         <div class="thrid-text">
           <h2>关于我们</h2>

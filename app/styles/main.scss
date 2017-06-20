@@ -1,7 +1,7 @@
 @import './variables.scss';
 @import './reset.scss';
 @import './sprite.scss';
-//@import 'loading.scss';
+@import 'loading.scss';
 @import './commen.scss';
 
 
@@ -36,7 +36,6 @@
     position: relative;
     color: #fff;
     text-align: center;
-    background-image: url(#{$cdn}/images/home-bg1.jpg);
 
     .first-container{
         margin: 80px 20px;
@@ -88,21 +87,6 @@
         @extend .first-block;
         @include sprite($sellout-block);
         display: none;
-    }
-}
-
-.section-second{
-    position: relative;
-    background-image: url(#{$cdn}/images/home-bg2.jpg);
-
-    .second-container{
-        position: relative;
-        width: 1256px;
-        max-width: 100%;
-        margin: 40px auto;
-        padding: 0 20px;
-        box-sizing: border-box;
-        z-index: 1000;
     }
 }
 
@@ -235,7 +219,6 @@
 
 .section-thrid{
     position: relative;
-    background-image: url(#{$cdn}/images/home-bg3.jpg);
 
     .thrid-container{
         width: 100%;
@@ -295,7 +278,6 @@
 
 /* 讲师页面 */
 .section-lectuer{
-    background-image: url(#{$cdn}/images/home-bg2.jpg);
 
     .lectuer-container{
         display: flex;
@@ -324,7 +306,6 @@
 
 /* 赞助商页面 */
 .section-sponsor{
-    background-image: url(#{$cdn}/images/home-bg2.jpg);
 
     .sponsor-container{
         width: 100%;
@@ -352,7 +333,6 @@
 
 /* 资讯页面 */
 .section-information{
-    background-image: url(#{$cdn}/images/information-bg.jpg);
 
     .information-container{
         width: 100%;
@@ -422,7 +402,6 @@
 
     .share{
         display:flex;
-        margin-right: 24px;
     }
 
     .thumb{
