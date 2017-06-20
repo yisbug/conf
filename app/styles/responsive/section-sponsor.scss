@@ -1,12 +1,16 @@
 @charset "utf-8";
 
 @media (max-width: $screen-sm-max) {
-  .section-lecture {
-    .lecture {
-      width: auto;
+  .section-sponsor {
+    .sponsor {
+      width: 100%;
       height: auto;
+      padding: 0;
+      background-image: none;
 
       &-container {
+        width: auto;
+        margin: 0;
         padding: 30px;
         display: block;
       }
@@ -15,9 +19,11 @@
         font-size: 1rem;
         line-height: 180%;
         color: #fff;
+        padding: 0;
 
         p {
           text-indent: 2em;
+          margin-bottom: 20px;
         }
       }
 
@@ -47,6 +53,10 @@
         position: absolute;
         top: 30px;
         right: 30px;
+      }
+
+      .triangle {
+        vertical-align: middle;
       }
     }
   }
