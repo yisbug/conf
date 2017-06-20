@@ -1,8 +1,9 @@
 @import './variables.scss';
 @import './reset.scss';
 @import './sprite.scss';
-@import 'loading.scss';
 @import './commen.scss';
+
+@import './loading.scss';
 
 .section.active{
     .fade-in-up{
@@ -216,6 +217,7 @@
     }
 }
 
+/* 关于我们 */
 .section-thrid{
     position: relative;
 
