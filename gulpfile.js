@@ -86,12 +86,12 @@ gulp.task('images', () => {
   return gulp.src(['app/images/**/*','!app/images/sprite/*'])
     .pipe($.cache($.imagemin()))
     .pipe(rev())
-    .pipe(qiniu(qiniuOption,{
+    /*.pipe(qiniu(qiniuOption,{
       dir: 'images/',
       versioning: false,
       versionFile: './cdn.json',
       concurrent: 10
-    }))
+    }))*/
     .pipe(gulp.dest('dist/images'))
     .pipe(rev.manifest())
     .pipe(gulp.dest('rev'));
@@ -237,6 +237,6 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', () => {
   return new Promise(resolve => {
     dev = false;
-    runSequence(['clean', 'wiredep'], 'build', 'inline', 'rev', 'revjs', 'rev', 'preimg', resolve);
+    runSequence(['clean', 'wiredep'], 'build', 'inline', 'rev', 'revjs', 'rev', resolve);
   });
 });
