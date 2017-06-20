@@ -3,10 +3,15 @@
 @media (max-width: $screen-sm-max) {
   .section-lecture {
     .lecture {
-      width: auto;
+      width: 100%;
       height: auto;
+      padding: 0;
+      background-image: none;
 
       &-container {
+        position: relative;
+        width: auto;
+        margin: 0;
         padding: 30px;
         display: block;
       }
@@ -15,9 +20,11 @@
         font-size: 1rem;
         line-height: 180%;
         color: #fff;
+        padding: 0;
 
         p {
           text-indent: 2em;
+          margin-bottom: 20px;
         }
       }
 

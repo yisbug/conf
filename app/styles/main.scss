@@ -100,19 +100,18 @@
         margin-bottom: 0;
     }
 
-    &.lectuer{
+    &.lecture{
         float: left;
         padding: 112px 10px 0 180px;
         background-image: url(#{$cdn}/images/volunteer-bg.png);
         background-position: center center;
         background-size: cover;
 
-        @media (max-width: $screen-sm-max){
-            display: block;
-            width: 100%;
-            padding: 112px 0 0 0;
-            text-align: center;
-        }
+        // @media (max-width: $screen-sm-max){
+        //     display: block;
+        //     width: 100%;
+        //     padding: 112px 0 0 0;
+        // }
 
         .block-text strong{
             color: #3db55e;
@@ -233,13 +232,13 @@
 
         h2{
             margin-bottom: 32px;
-            font-size: 50px;
+            font-size: 48px;
             font-weight: bold;
         }
 
         p{
-            font-size: 20px;
-            line-height: 30px;
+            font-size: 18px;
+            line-height: 32px;
             text-indent: 2em;
         }
     }
@@ -278,9 +277,9 @@
 }
 
 /* 讲师页面 */
-.section-lectuer{
+.section-lecture{
 
-    .lectuer-container{
+    .lecture-container{
         display: flex;
         justify-content: space-between;
         width: 100%;
@@ -292,7 +291,7 @@
         }
     }
 
-    .lectuer-text{
+    .lecture-text{
         max-width: 742px;
         padding: 20px;
         color: #fff;
@@ -596,7 +595,7 @@
         font-size: 22px;
     }
 
-    .pop-lectuer{
+    .pop-lecture{
         margin-bottom: 18px;
         color: #3ea15b;
         font-size: 16px;
