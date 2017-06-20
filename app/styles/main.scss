@@ -4,7 +4,6 @@
 //@import 'loading.scss';
 @import './commen.scss';
 
-
 .section.active{
     .fade-in-up{
         @media (min-width: $screen-sm-max){
@@ -41,7 +40,7 @@
     .first-container{
         margin: 80px 20px;
     }
-        
+
     .first-title{
         margin-bottom: 80px;
         font-size: 94px;
@@ -832,3 +831,5 @@
         transform: none;
     }
 }
+
+@import './responsive/index';
